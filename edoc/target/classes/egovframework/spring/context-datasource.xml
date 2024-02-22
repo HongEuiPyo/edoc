@@ -4,10 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/jdbc  http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd">
 	
-	<!-- 테스트 실행용 --> 
+	<!-- 테스트 실행용  
 	<jdbc:embedded-database id="dataSource" type="HSQL">
 		<jdbc:script location= "classpath:/db/sampledb.sql"/>
 	</jdbc:embedded-database>
+	-->
      
      
     <!-- hsql (테스트용 메모리 DB)
@@ -27,13 +28,13 @@
     </bean>
     -->
     
-    <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정)
+    <!-- oracle (POM에서 commons-dbcp, ojdbc(라이센스 사항으로 별도로 배포되지 않음) 관련 라이브러리 설정) -->
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:example" />
-        <property name="username" value="user"/>
-        <property name="password" value="password"/>
+        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe" />
+        <property name="username" value="edoc"/>
+        <property name="password" value="edoc"/>
     </bean>
-    -->
+    
     
 </beans>

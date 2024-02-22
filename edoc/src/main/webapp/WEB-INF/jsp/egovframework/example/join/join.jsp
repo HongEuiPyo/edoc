@@ -1,5 +1,9 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 
@@ -9,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>E-DOCUMENT - 회원가입</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -21,6 +25,14 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
+<!-- jQuery -->
+<script type="text/javascript">
+	function fnGoJoin() {
+		document.joinFrm.method = "post";
+		document.joinFrm.action = "<c:url value='/joinProc.do' />";
+		document.joinFrm.submit();
+	}
+</script>
 
 <body class="bg-gradient-primary">
 
@@ -30,54 +42,54 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-5" style="background-image: url('img/login_left_banner.png'); background-position: center center;"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">회원가입</h1>
                             </div>
-                            <form class="user">
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                            <form id="joinFrm" name="joinFrm" class="user">
+                            	<div class="form-group">
+                                    <input type="email" name="id" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="아이디">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" name="pw" class="form-control form-control-user"
+                                            id="exampleInputPassword" placeholder="비밀번호">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                        <input type="password" name="pw2" class="form-control form-control-user"
+                                            id="exampleRepeatPassword" placeholder="비밀번호 확인">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" name="name" class="form-control form-control-user" id="exampleFirstName"
+                                            placeholder="이름">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" name="phone" class="form-control form-control-user" id="exampleLastName"
+                                            placeholder="핸드폰">
+                                    </div>
+                                </div>
+                                <a href="javascript:fnGoJoin();" class="btn btn-primary btn-user btn-block">
+                                    회원가입
                                 </a>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
+                                    <i class="fab fa-google fa-fw"></i> 구글 계정 연동
                                 </a>
                                 <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                    <i class="fab fa-facebook-f fa-fw"></i> 페이스북 계정 연동
                                 </a>
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="forgot-password.html">비밀번호 찾기</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="<c:url value='/login.do' />">로그인</a>
                             </div>
                         </div>
                     </div>

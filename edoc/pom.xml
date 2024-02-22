@@ -100,7 +100,7 @@
 			<version>2.5.2</version>
 		</dependency>
         
-        <!-- mysql이나 oracle DB 사용시 아래 설정 추가  
+        <!-- mysql이나 oracle DB 사용시 아래 설정 추가 -->
         <dependency>
             <groupId>com.googlecode.log4jdbc</groupId>
             <artifactId>log4jdbc</artifactId>
@@ -119,20 +119,20 @@
 		    <version>2.9.0</version>
 		</dependency>
         
-        <dependency>
+        <!-- <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.29</version>
-        </dependency>
+        </dependency> -->
 
         <dependency>
             <groupId>ojdbc</groupId>
             <artifactId>ojdbc</artifactId>
-            <version>14</version>
+            <version>11.0.2</version>
             <scope>system</scope>
-            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc-14.jar</systemPath>
+            <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc6.jar</systemPath>
         </dependency>
-        -->
+        
 	</dependencies>
 
 	<build>

@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
+<!-- Mybatis config.xml 에서 resultType이나 parameterType 패키지명을 별칭으로 사용할 수 있게끔 변경 -->
 <configuration>
     <typeAliases>
+    	<!-- EgovMap -->
 		<typeAlias alias="egovMap" type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
-		<typeAlias alias="searchVO" type="egovframework.example.sample.service.SampleDefaultVO"/>
-		<typeAlias alias="sampleVO" type="egovframework.example.sample.service.SampleVO"/>
+		<!-- 로그인 VO -->
+		<typeAlias alias="loginVO" type="egovframework.example.login.service.LoginVO"/>
+		<!-- 회원가입 VO -->
+		<typeAlias alias="joinVO" type="egovframework.example.join.service.JoinVO"/>
+		<!-- 회원관리 검색 VO -->
+		<typeAlias alias="mberMngSearchVO" type="egovframework.example.mberMng.service.MberMngSearchVO"/>
+		<!-- 회원관리 VO -->
+		<typeAlias alias="mberMngVO" type="egovframework.example.mberMng.service.MberMngVO"/>
     </typeAliases>
+    
+    <!-- <mappers>
+    	<mapper resource="" />
+    	<mapper resource="" />
+    </mappers> -->
+    
 </configuration>
