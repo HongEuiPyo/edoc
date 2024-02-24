@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="egovframework.example.login.service.impl.LoginDAO">
+
+	<!-- 로그인 -->
+	<select id="authenticate" parameterType="loginVO" resultType="loginVO">
+			SELECT
+				id, pw, name, phone
+			FROM member
+			WHERE id=#{id} and pw=#{pw}
+	</select>
+
+</mapper>
