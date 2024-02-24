@@ -133,6 +133,12 @@
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc6.jar</systemPath>
         </dependency>
         
+		<dependency>
+			<groupId>org.egovframe.rte</groupId>
+			<artifactId>org.egovframe.rte.fdl.access</artifactId>
+			<version>${org.egovframe.rte.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
